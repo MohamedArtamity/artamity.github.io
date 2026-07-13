@@ -1,133 +1,180 @@
+/* =========================
+   RESET
+========================= */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
+/* =========================
+   BODY
+========================= */
+
 body{
+    background:#000;
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
+}
 
-background:#000;
+/* =========================
+   NAVBAR
+========================= */
 
-color:white;
-
-font-family:Arial;
-
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(10px);
 }
 
 nav{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:25px 60px;
-
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
 }
 
 .logo{
-
-font-size:28px;
-
-font-weight:bold;
-
-letter-spacing:2px;
-
+    font-size:28px;
+    font-weight:bold;
+    letter-spacing:3px;
+    text-transform:uppercase;
 }
 
-ul{
-
-display:flex;
-
-gap:35px;
-
-list-style:none;
-
+nav ul{
+    display:flex;
+    gap:35px;
+    list-style:none;
 }
 
-a{
-
-text-decoration:none;
-
-color:white;
-
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    transition:.3s;
 }
 
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-                url("images/IMG_0284.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-    color: white;
-    padding: 0 20px;
+nav ul li a:hover{
+    color:#d4af37;
 }
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.60)),
+    url("images/IMG_0284.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:0 20px;
 
 }
 
 .hero h1{
 
-font-size:72px;
+    font-size:75px;
 
-margin-bottom:20px;
+    letter-spacing:3px;
+
+    margin-bottom:15px;
 
 }
 
 .hero h2{
 
-font-size:28px;
+    font-size:28px;
 
-color:#c9c9c9;
+    color:#d9d9d9;
 
-margin-bottom:25px;
+    margin-bottom:25px;
+
+    font-weight:400;
 
 }
 
 .hero p{
 
-width:700px;
+    width:700px;
 
-max-width:90%;
+    max-width:90%;
 
-font-size:20px;
+    font-size:20px;
 
-line-height:1.8;
+    line-height:1.8;
 
-margin-bottom:40px;
+    color:#e5e5e5;
+
+    margin-bottom:45px;
 
 }
 
 .btn{
 
-padding:15px 40px;
+    display:inline-block;
 
-border:2px solid white;
+    padding:16px 42px;
 
-transition:.4s;
+    border:2px solid white;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:40px;
+
+    transition:.35s;
+
+    font-weight:bold;
 
 }
 
 .btn:hover{
 
-background:white;
+    background:white;
 
-color:black;
+    color:black;
+
+    transform:translateY(-3px);
 
 }
-/* ================= Portfolio ================= */
 
-.portfolio{
+/* =========================
+   SECTION
+========================= */
+
+section{
 
     padding:100px 10%;
+
+}
+
+/* =========================
+   PORTFOLIO
+========================= */
+
+.portfolio{
 
     background:#111;
 
@@ -145,39 +192,45 @@ color:black;
 
 .portfolio p{
 
-    color:#bbb;
-
-    margin-bottom:50px;
+    color:#bdbdbd;
 
     font-size:18px;
 
+    max-width:750px;
+
+    margin:0 auto 60px;
+
+    line-height:1.8;
+
 }
+
+/* =========================
+   GALLERY
+========================= */
 
 .gallery{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
-    gap:25px;
+    gap:30px;
 
 }
 
 .card{
 
-    background:#1d1d1d;
+    background:#1a1a1a;
 
-    padding:80px 20px;
+    border-radius:15px;
 
-    border-radius:12px;
+    overflow:hidden;
 
-    border:1px solid #333;
+    transition:.35s;
 
-    transition:0.4s;
+    border:1px solid #2c2c2c;
 
-    font-size:22px;
-
-    font-weight:bold;
+    cursor:pointer;
 
 }
 
@@ -185,8 +238,141 @@ color:black;
 
     transform:translateY(-10px);
 
-    border-color:#ffffff;
+    border-color:#d4af37;
 
-    box-shadow:0 0 20px rgba(255,255,255,.15);
+    box-shadow:0 15px 35px rgba(0,0,0,.45);
+
+}
+
+/* صور الكارد */
+
+.card img{
+
+    width:100%;
+
+    height:250px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+/* أيقونة */
+
+.card span{
+
+    font-size:50px;
+
+    display:block;
+
+    margin-top:35px;
+
+}
+
+/* عنوان */
+
+.card h3{
+
+    padding:25px;
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+/* =========================
+   EMPTY SECTIONS
+========================= */
+
+#about,
+#services,
+#clients,
+#contact{
+
+    min-height:400px;
+
+    background:#000;
+
+}
+
+/* =========================
+   SCROLL BAR
+========================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#555;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#d4af37;
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+nav{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+nav ul{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:18px;
+
+}
+
+.hero h1{
+
+    font-size:48px;
+
+}
+
+.hero h2{
+
+    font-size:22px;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+}
+
+.portfolio h2{
+
+    font-size:40px;
+
+}
 
 }
