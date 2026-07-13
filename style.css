@@ -54,21 +54,23 @@ color:white;
 
 }
 
-.hero{
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                url("images/IMG_0284.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-height:90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-align-items:center;
-
-text-align:center;
-
-padding:20px;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
 
 }
 
